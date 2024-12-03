@@ -41,10 +41,10 @@ function szamoljHaver() {
             document.getElementById("eredmeny").value = Math.pow(a, 2)
         }
         else if (m == "sin") {
-            document.getElementById("eredmeny").value = Math.sin(a * Math.PI / 180)
+            document.getElementById("eredmeny").value = Math.sin(a)
         }
         else if (m == "cos") {
-            document.getElementById("eredmeny").value = Math.cos(a * Math.PI / 180)
+            document.getElementById("eredmeny").value = Math.cos(a)
         }
         else if (m == "CE") {
             document.getElementById("eredmeny").value = ""
