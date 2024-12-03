@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="event.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="calculator">
+    <input type="text" id="eredmeny"><br>
+<div>
+    <input type="button" value="1" onclick="szamKatt(1)">
+    <input type="button" value="2" onclick="szamKatt(2)">
+    <input type="button" value="3" onclick="szamKatt(3)">
+</div>
+<div>   
+    <input type="button" value="4" onclick="szamKatt(4)">
+    <input type="button" value="5" onclick="szamKatt(5)">
+    <input type="button" value="6" onclick="szamKatt(6)">
+</div>
+<div>
+    <input type="button" value="7" onclick="szamKatt(7)">
+    <input type="button" value="8" onclick="szamKatt(8)">
+    <input type="button" value="9" onclick="szamKatt(9)">
+</div>
+<div>   
+    <input type="button" value="0" onclick="szamKatt(0)">
+    <input type="button" value="+" onclick="muvelet('+')">
+    <input type="button" value="-" onclick="muvelet('-')">
+</div>
+<div>
+    <input type="button" value="*" onclick="muvelet('*')">
+    <input type="button" value="/" onclick="muvelet('/')">
+    <input type="button" value="=" onclick="szamoljHaver()">
+</div>
+</div>
+</body>
+</html>
