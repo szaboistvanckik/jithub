@@ -50,3 +50,19 @@ input[type="button"] {
 input[type="button"]:hover {
     background-color: #dcdcdc;
 }
+
+.sarga {
+    background-color: yellow !important;
+}
+
+input[value="CE"] {
+    background-color: red;
+}
+
+input[value="="] {
+    background-color: greenyellow;
+}
+
+input[value="0"] {
+    width: 100%;
+}

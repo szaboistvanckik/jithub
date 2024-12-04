@@ -46,6 +46,12 @@ function szamoljHaver() {
         else if (m == "cos") {
             document.getElementById("eredmeny").value = Math.cos(a)
         }
+        else if (m == "log") {
+            document.getElementById("eredmeny").value = Math.log10(a)
+        }
+        else if (m == "^") {
+            document.getElementById("eredmeny").value = Math.pow(a, b)
+        }
         else if (m == "CE") {
             document.getElementById("eredmeny").value = ""
             a = -1
