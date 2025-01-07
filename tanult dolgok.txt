@@ -1,0 +1,26 @@
+js link
+defer
+onclick
+input mezok (email, text, number, button)
+definialas fuggveny, return
+fuggveny --> azert mert zart, onallo (parametereken keresztul kommunikal)
+tombok letrehozasa (const t=[], new array)
+
+const (nem definialhato ujra; hat ra az utasitas blokk), let (lokalis valtozo), var (ujra definialhato, globalis valtozo)
+
+
+veletlen szam generalas fuggveny megirasa:
+
+function veletlenSzam(also, felso) {
+    return Math.floor(Math.random()*(felso-also+1)+also);
+}
+
+amoba tabla feltoltese aknakkal, ilyen tablazatok feltoltese random szamokkal
+
+tablazat generalas --> sorok oszlopok szama (felhasznalo adja meg)
+
+uj html tag generalas --> createelement
+tulajdonsagainak elerese: PONT (td.style, td.innertext whatever bro)
+input mezonek eleme --> .value
+
+get element by id
