@@ -3,41 +3,56 @@ function randomszam(also, felso) {
 }
 
 
-function feltoltTomb() {
-    var szam = parseInt(document.getElementById("x").value);
-
+function feltoltTomb(x) {
     const lst = [];
+    x = x / 2
 
-    for (let i = 0; i < szam; i++) {
-        lst.push(i, i);
-    }
-
-    for (let i = 0; i < szam; i++) {
-        let v1 = randomszam(0, 1);
-        let v2 = randomszam(0, 1);
-
-        let sv = lst[v1]
-        lst[v1] = lst[v2]
-        lst[v2] = sv
+    for (let i = 1; i <= x; i++) {
+        lst.push(i);
+        lst.push(i);
     }
 
     return lst;
 }
 
-function generalj() {
-    var sor = 10;
-    var oszlop = 10;
 
-
-    var tabla = document.getElementById("tabla");
+function sorSzam(ksz) {
+    i = Math.floor(Math.sqrt(ksz));
     
-    const lst = feltoltTomb()
+    while (ksz % i != 0) {
+        i--;
+    }
+    return i;
+}
 
-    for (var i=0; i < sor; i++) {
-        var tr=document.createElement("tr");
-        for (var j=0; j < oszlop; j++) {
-            var td=document.createElement("td");
-            td.innerText= lst[i*oszlop + j];
+
+function shuffle(t) {
+    for (let i = 0; i < t.length; i++) {
+        const r1 = randomszam(0, t.length - 1);
+        const r2 = randomszam(0, t.length - 1);
+        const s = t[r1];
+        t[r1] = t[r2];
+        t[r2] = s;
+    }
+    return t;
+}
+
+function generalj() {
+    const tabla = document.getElementById("tabla");
+    const szam = document.getElementById("x").value * 2;
+    const sor = sorSzam(szam);
+    const oszlop = szam / sor;
+
+    const lst = shuffle(feltoltTomb(szam));
+
+
+    tabla.innerHTML = "";
+
+    for (var i = 0; i < sor; i++) {
+        const tr = document.createElement("tr");
+        for (var j = 0; j < oszlop; j++) {
+            const td = document.createElement("td");
+            td.innerText= lst[i * sor + j];
             tr.appendChild(td);
         }
         tabla.appendChild(tr);
