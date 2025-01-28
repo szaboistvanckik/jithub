@@ -1,3 +1,7 @@
+function kiir(td) {
+    alert(td.innerText);
+}
+
 function megszamolas(telefon, tul) {
     let db = 0;
 
@@ -12,12 +16,12 @@ function megszamolas(telefon, tul) {
 }
 
 function getAdat() {
-    const ide = document.getElementById("ide");
-    const telefon = document.getElementsByTagName("td");
+    const ide = document.querySelector("#ide");
+    const telefon = document.querySelectorAll("td");
 
     ide.innerText = megszamolas(telefon, 30);
 
-    const kulondijasok = document.getElementsByClassName("kulondij");
+    const kulondijasok = document.querySelectorAll(".kulondij");
     
     for (let i = 0; i < kulondijasok.length; i++) {
         kulondijasok[i].style.backgroundColor = "red";
