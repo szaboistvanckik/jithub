@@ -37,6 +37,18 @@ function shuffle(t) {
     return t;
 }
 
+function lefed(cella) {
+    cella.innerText = "■";
+}
+
+function felfed(lst, i, j, oszlop, cella) {
+    cella.innerText = lst[i * oszlop + j]; 
+    setTimeout(function() {
+        lefed(cella);
+    }, 1000);
+}
+
+
 function generalj() {
     const tabla = document.getElementById("tabla");
     const szam = document.getElementById("x").value * 2;
@@ -48,11 +60,15 @@ function generalj() {
 
     tabla.innerHTML = "";
 
-    for (var i = 0; i < sor; i++) {
+    for (let i = 0; i < sor; i++) {
         const tr = document.createElement("tr");
-        for (var j = 0; j < oszlop; j++) {
+        for (let j = 0; j < oszlop; j++) {
             const td = document.createElement("td");
-            td.innerText= lst[i * sor + j];
+            td.addEventListener("click",function() {
+                felfed(lst, i, j, oszlop, this)
+            })
+            // td.innerText= lst[i * oszlop + j];
+            td.innerText = "■";
             tr.appendChild(td);
         }
         tabla.appendChild(tr);
