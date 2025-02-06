@@ -41,15 +41,28 @@ function lefed(cella) {
     cella.innerText = "■";
 }
 
-function felfed(lst, i, j, oszlop, cella) {
+function felfed(lst, i, j, oszlop, cella, count) {
     cella.innerText = lst[i * oszlop + j]; 
-    setTimeout(function() {
-        lefed(cella);
-    }, 1000);
+    info[0]++;
+
+    if (info[0] % 2 == 0) {
+        if (info[1].innerText != cella.innerText) {
+            setTimeout(function() {
+                lefed(cella);
+                lefed(info[1]);
+            }, 1000);
+        }
+    }
+    else {
+        info[1] = cella;
+    }
+
+    return info;
 }
 
+function generalj() { 
+    let info = [0, null];
 
-function generalj() {
     const tabla = document.getElementById("tabla");
     const szam = document.getElementById("x").value * 2;
     const sor = sorSzam(szam);
@@ -57,7 +70,7 @@ function generalj() {
 
     const lst = shuffle(feltoltTomb(szam));
 
-
+    
     tabla.innerHTML = "";
 
     for (let i = 0; i < sor; i++) {
@@ -65,8 +78,9 @@ function generalj() {
         for (let j = 0; j < oszlop; j++) {
             const td = document.createElement("td");
             td.addEventListener("click",function() {
-                felfed(lst, i, j, oszlop, this)
+                info = felfed(lst, i, j, oszlop, this, info)
             })
+
             // td.innerText= lst[i * oszlop + j];
             td.innerText = "■";
             tr.appendChild(td);
