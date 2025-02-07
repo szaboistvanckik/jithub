@@ -2,7 +2,6 @@ function randomszam(also, felso) {
     return Math.floor(Math.random() * (felso - also + 1) + also);
 }
 
-
 function feltoltTomb(x) {
     const lst = [];
     x = x / 2
@@ -15,7 +14,6 @@ function feltoltTomb(x) {
     return lst;
 }
 
-
 function sorSzam(ksz) {
     i = Math.floor(Math.sqrt(ksz));
     
@@ -24,7 +22,6 @@ function sorSzam(ksz) {
     }
     return i;
 }
-
 
 function shuffle(t) {
     for (let i = 0; i < t.length; i++) {
@@ -41,7 +38,7 @@ function lefed(cella) {
     cella.innerText = "■";
 }
 
-function felfed(lst, i, j, oszlop, cella, count) {
+function felfed(lst, i, j, oszlop, cella, info) {
     cella.innerText = lst[i * oszlop + j]; 
     info[0]++;
 
@@ -78,7 +75,7 @@ function generalj() {
         for (let j = 0; j < oszlop; j++) {
             const td = document.createElement("td");
             td.addEventListener("click",function() {
-                info = felfed(lst, i, j, oszlop, this, info)
+                info = felfed(lst, i, j, oszlop, this, info);
             })
 
             // td.innerText= lst[i * oszlop + j];
