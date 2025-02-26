@@ -1,0 +1,10 @@
+td {
+    font-size: 100px;
+    padding-left: 70px !important;
+    padding-right: 70px !important;
+}
+
+table {
+    margin: auto;
+    text-align: center;
+}
